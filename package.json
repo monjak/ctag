@@ -1,0 +1,13 @@
+{
+  "name": "ctag",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
+}
