@@ -3,11 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "compile": "lessc --no-color index.less .compiled.css 2>&1 | xargs -0 notify -t 'LESS error' -m || true",
+    "start": "watchy --silent -w . -- npm run compile & http-server . -p 8389"
   },
   "license": "ISC",
   "private": true,
   "devDependencies": {
     "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "http-server": "^0.8.0",
+    "less": "^2.5.1",
+    "node-notifier": "^4.2.3",
+    "watchy": "^0.6.2"
   }
 }
