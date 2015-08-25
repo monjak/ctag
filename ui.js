@@ -2,11 +2,13 @@
 (function(){
 	'use strict';
 
-	var generateOutput = function(text) {
-		document.getElementById('output').value = convert(text);
+	var input = document.getElementById('input');
+	var output = document.getElementById('output');
+
+	var generateOutput = function() {
+		output.value = convert(input.value);
 	};
 
-	var input = document.getElementById('input');
-	input.addEventListener('change', function(){ generateOutput(input.value); });
-	input.addEventListener('keyup', function(){ generateOutput(input.value); });
+	input.addEventListener('change', generateOutput);
+	input.addEventListener('keyup', generateOutput);
 })();
