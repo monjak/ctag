@@ -12,5 +12,6 @@
 	input.addEventListener('change', generateOutput);
 	input.addEventListener('keyup', generateOutput);
 
-	output.onclick = output.select;
+	var selectOutput = function(){ output.select(); };
+	output.addEventListener('click', selectOutput);
 })();
