@@ -13,5 +13,8 @@
 	input.addEventListener('keyup', generateOutput);
 
 	var selectOutput = function(){ output.select(); };
+	output.addEventListener('focus', function(){
+		setTimeout(selectOutput, 0);
+	});
 	output.addEventListener('click', selectOutput);
 })();
