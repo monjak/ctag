@@ -11,4 +11,6 @@
 
 	input.addEventListener('change', generateOutput);
 	input.addEventListener('keyup', generateOutput);
+
+	output.onclick = output.select;
 })();
