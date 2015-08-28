@@ -4,8 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "compile": "lessc --no-color index.less .compiled.css 2>&1 | xargs -0 notify -t 'LESS error' -m || true",
-    "start": "watchy --silent -w . -- npm run compile & http-server . -p 8389"
+    "build": "npm run compile-less && inliner index.html > ctag.html",
+    "compile-less": "lessc --no-color index.less .compiled.css 2>&1 | xargs -0 notify -t 'LESS error' -m || true",
+    "start": "watchy --silent -w . -- npm run compile-less & http-server . -p 8389"
   },
   "license": "ISC",
   "private": true,
@@ -14,6 +15,7 @@
   },
   "dependencies": {
     "http-server": "^0.8.0",
+    "inliner": "^1.1.1",
     "less": "^2.5.1",
     "node-notifier": "^4.2.3",
     "watchy": "^0.6.2"
