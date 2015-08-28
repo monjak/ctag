@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "build": "npm run compile-less && inliner index.html > ctag.html",
+    "build": "npm run compile-less && inliner --nocompress index.html > ctag.html",
     "compile-less": "lessc --no-color index.less .compiled.css 2>&1 | xargs -0 notify -t 'LESS error' -m || true",
     "start": "watchy --silent -w . -- npm run compile-less & http-server . -p 8389"
   },
